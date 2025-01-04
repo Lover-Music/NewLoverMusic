@@ -387,6 +387,7 @@ With Your ☛ Other Friends.**"""
                         text="💥 ℂᴏᴍᴍᴀɴᴅʟᴇℝ 💥",
                         callback_data="open_command_list",
                     )
+                ],
                     [
             InlineKeyboardButton(text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support"),
             InlineKeyboardButton(text="💥 𝕊ᴜᴘᴘᴏʀ𝕋 💥", url=f"https://t.me/LOVER_MUSIC_SUPPORT_GROUP"),
@@ -394,7 +395,6 @@ With Your ☛ Other Friends.**"""
             [
             InlineKeyboardButton(text="𓊈💥🔥𝔻eͥѵeͣlͫ𐍉קeℝ🔥💥𓊉", url=f"https://t.me/shubhamsah1",
             )
-        ],
                 ],
             ]
         )
