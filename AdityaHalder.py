@@ -1155,6 +1155,25 @@ async def stream_audio_or_video(client, message):
                 except Exception:
                     LOGGER.info(f"Send Error: {e}")
                     return
+
+        buttons = [
+            [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support")
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
+            )
+        ],
+    ]
+    return buttons
         else:
             return
         try:
