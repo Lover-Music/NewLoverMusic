@@ -378,7 +378,7 @@ With Your ☛ Other Friends.**"""
             [
                 [
                     InlineKeyboardButton(
-                        text=""💥 𓆩𝔸DD 𝕄E 𝕋O 𝕐OUƦ 𝔾ƦOUק𓆪 💥"",
+                        text="💥 𓆩𝔸DD 𝕄E 𝕋O 𝕐OUƦ 𝔾ƦOUק𓆪 💥",
                         url=f"https://t.me/{bot.me.username}?startgroup=true",
                     )
                 ],
