@@ -1004,15 +1004,14 @@ async def stream_audio_or_video(client, message):
         else:
             requested_by = user.title
     buttons = InlineKeyboardMarkup(
-        [
+     [
                 InlineKeyboardButton(
                     text="💫 sᴜᴩᴩᴏʀᴛ 💫",
-                    url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP",
-                )
-            (
+                    url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP")
+            
             InlineKeyboardButton(
-                text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support"),
-            )
+                text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support")
+            
         ],
         [
       
