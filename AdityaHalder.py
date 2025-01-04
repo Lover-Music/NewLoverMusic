@@ -1021,13 +1021,6 @@ async def stream_audio_or_video(client, message):
             ),
         ],
 
-        [
-            InlineKeyboardButton(
-                text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
-        ],
-
          
      [
          InlineKeyboardButton(
