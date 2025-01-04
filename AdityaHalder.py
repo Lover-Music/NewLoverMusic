@@ -1005,13 +1005,12 @@ async def stream_audio_or_video(client, message):
             requested_by = user.title
     buttons = InlineKeyboardMarkup(
      [
-                InlineKeyboardButton(
+     [
+         InlineKeyboardButton(
                     text="💫 sᴜᴩᴩᴏʀᴛ 💫",
                     url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP")
             
-            InlineKeyboardButton(
-                text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support")
-            
+        
         ],
         [
       
@@ -1020,7 +1019,7 @@ async def stream_audio_or_video(client, message):
                     callback_data="force_close",
                 )
         ],
-        
+        ]
     )
     if stream_type == "Audio":
         stream_media = MediaStream(
