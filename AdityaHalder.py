@@ -86,6 +86,7 @@ MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://hnyx:wywyw2@cluster0.9dxlsl
 OWNER_ID = int(getenv("OWNER_ID", "7758957839"))
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002488687891"))
 START_IMAGE_URL = getenv("START_IMAGE_URL", "https://telegra.ph/file/a62273c43c95ad07ada61.jpg")
+STATS_IMAGE_URL = getenv("STATS_IMAGE_URL", "https://graph.org//file/99a8a9c13bb01f9ac7d98.png")
 
 
 # Memory Database
@@ -1429,8 +1430,8 @@ async def check_bot_stats(client, message):
         await message.delete()
     except:
         pass
-    photo = START_IMAGE_URL
-    caption = "**⏤͟͞ADITYA PLAYER STATS ༗**"
+    photo = STATS_IMAGE_URL
+    caption = "**⏤͟͞Lover Music STATS ༗**"
     buttons = InlineKeyboardMarkup(
         [
             [
