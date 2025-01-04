@@ -1157,7 +1157,6 @@ async def stream_audio_or_video(client, message):
                     return
 
         buttons = [
-            [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
@@ -1173,7 +1172,7 @@ async def stream_audio_or_video(client, message):
             )
         ],
     ]
-    return buttons
+    return
         else:
             return
         try:
