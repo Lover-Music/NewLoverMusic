@@ -897,7 +897,6 @@ async def stream_audio_or_video(client, message):
        await message.reply_photo(
             photo=START_IMAGE_URL, caption=caption, reply_markup=buttons
         )
-    try:
         await message.delete()
     except Exception:
         pass
