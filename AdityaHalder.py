@@ -1008,7 +1008,11 @@ async def stream_audio_or_video(client, message):
      [
          InlineKeyboardButton(
                     text="💫 sᴜᴩᴩᴏʀᴛ 💫",
-                    url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP")
+                    url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP"),
+         InlineKeyboardButton(
+                    text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥",
+                    url="https://t.me/Lover_Music_Support"),
+         
             
         
         ],
