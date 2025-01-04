@@ -378,15 +378,23 @@ With Your ☛ Other Friends.**"""
             [
                 [
                     InlineKeyboardButton(
-                        text="🥀 Add Me In Your Chat ✨",
+                        text=""💥 𓆩𝔸DD 𝕄E 𝕋O 𝕐OUƦ 𝔾ƦOUק𓆪 💥"",
                         url=f"https://t.me/{bot.me.username}?startgroup=true",
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        text="🌺 Open Command List 🌷",
+                        text="💥 ℂᴏᴍᴍᴀɴᴅʟᴇℝ 💥",
                         callback_data="open_command_list",
                     )
+                    [
+            InlineKeyboardButton(text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support"),
+            InlineKeyboardButton(text="💥 𝕊ᴜᴘᴘᴏʀ𝕋 💥", url=f"https://t.me/LOVER_MUSIC_SUPPORT_GROUP"),
+            ],
+            [
+            InlineKeyboardButton(text="𓊈💥🔥𝔻eͥѵeͣlͫ𐍉קeℝ🔥💥𓊉", url=f"https://t.me/shubhamsah1",
+            )
+        ],
                 ],
             ]
         )
@@ -474,14 +482,11 @@ With Your ☛ Other Friends.**"""
             ],
             [
             InlineKeyboardButton(text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support"),
-            InlineKeyboardButton(
-                text="💥 𝕊ᴜᴘᴘᴏʀ𝕋 💥", url=f"{config.SUPPORT_GROUP}"
-            ),
-        ],
-          [
-            InlineKeyboardButton(
-                    text="𓊈💥🔥𝔻eͥѵeͣlͫ𐍉קeℝ🔥💥𓊉", url=f"https://t.me/shubhamsah1"
-                )
+            InlineKeyboardButton(text="💥 𝕊ᴜᴘᴘᴏʀ𝕋 💥", url=f"https://t.me/LOVER_MUSIC_SUPPORT_GROUP"),
+            ],
+            [
+            InlineKeyboardButton(text="𓊈💥🔥𝔻eͥѵeͣlͫ𐍉קeℝ🔥💥𓊉", url=f"https://t.me/shubhamsah1",
+            )
         ],
         ]
     )
