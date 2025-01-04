@@ -856,7 +856,6 @@ async def change_stream(chat_id):
                 text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
             )
         ],
-        ]
     )
     return await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
 
