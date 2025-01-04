@@ -1009,11 +1009,18 @@ async def stream_audio_or_video(client, message):
                     text="💫 sᴜᴩᴩᴏʀᴛ 💫",
                     url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP",
                 )
-                
+            (
+            InlineKeyboardButton(
+                text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥", url=f"https://t.me/Lover_Music_Support"),
+            )
+        ],
+        [
+      
                 InlineKeyboardButton(
                     text="🗑️ Close",
                     callback_data="force_close",
                 )
+        ],
         ]
     )
     if stream_type == "Audio":
