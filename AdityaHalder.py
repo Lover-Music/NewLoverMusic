@@ -848,12 +848,14 @@ async def change_stream(chat_id):
 **✰ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
     buttons = InlineKeyboardMarkup(
         [
-            [
-                InlineKeyboardButton(
-                    text="🗑️ Close",
-                    callback_data="force_close",
-                )
-            ],
+            InlineKeyboardButton(
+                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support")
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
+            )
+        ],
         ]
     )
     return await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
@@ -929,12 +931,15 @@ async def stream_audio_or_video(client, message):
         if len(message.command) < 2:
             buttons = InlineKeyboardMarkup(
                 [
-                    [
-                        InlineKeyboardButton(
-                            text="🗑️ Close",
-                            callback_data="force_close",
-                        )
-                    ],
+                    buttons = [
+        [
+            InlineKeyboardButton(
+                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support")
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close")
+        ],
                 ]
             )
             return await aux.edit_text(
@@ -1001,13 +1006,15 @@ async def stream_audio_or_video(client, message):
         else:
             requested_by = user.title
     buttons = InlineKeyboardMarkup(
+        buttonsbuttons =[
+            InlineKeyboardButton(
+                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support")
+        ],
         [
-            [
-                InlineKeyboardButton(
-                    text="🗑️ Close",
-                    callback_data="force_close",
-                )
-            ],
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
+            )
+        ],
         ]
     )
     if stream_type == "Audio":
@@ -1145,21 +1152,7 @@ async def stream_audio_or_video(client, message):
 **🐬 Duration:** {duration}
 **🦋 Stream Type:** {stream_type}
 **👾 Requested By:** {requested_by}"""
-                buttons = [
-            InlineKeyboardButton(
-                text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support")
-        ],
-        [
-            InlineKeyboardButton(
-                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
-            )
-        ],
+                
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail
