@@ -897,9 +897,6 @@ async def stream_audio_or_video(client, message):
        await message.reply_photo(
             photo=START_IMAGE_URL, caption=caption, reply_markup=buttons
         )
-    except Exception as e:
-        LOGGER.info(f"🚫 Error: {e}")
-        return
     try:
         await message.delete()
     except Exception:
