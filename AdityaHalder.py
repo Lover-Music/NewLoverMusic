@@ -1,4 +1,4 @@
-import aiohttp, aiofiles, asyncio, base64, logging
+0import aiohttp, aiofiles, asyncio, base64, logging
 import os, platform, random, re, socket
 import sys, time, textwrap
 
@@ -933,9 +933,8 @@ async def stream_audio_or_video(client, message):
                 [
         [
             InlineKeyboardButton(
-                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support")
-        ],
-        [
+                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support"),
+        
             InlineKeyboardButton(
                 text="✯ ᴄʟᴏsᴇ ✯", callback_data="close")
         ],
@@ -945,6 +944,13 @@ async def stream_audio_or_video(client, message):
                 "**🥀 Give Me Some Query To\nPlay Audio Or Video❗...\n\nℹ️ Examples:\n≽ Audio: `/play satisfya`\n≽ Video: `/vplay satisfya`**",
                 reply_markup=buttons,
             )
+            try:
+        await message.reply_photo(
+            photo=START_IMAGE_URL, caption=caption, reply_markup=buttons
+        )
+    except Exception as e:
+        LOGGER.info(f"🚫 Error: {e}")
+        return
         query = message.text.split(None, 1)[1]
         if "https://" in query:
             base = r"(?:https?:)?(?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:\-nocookie)?\.(?:[A-Za-z]{2,4}|[A-Za-z]{2,3}\.[A-Za-z]{2})\/)?(?:shorts\/|live\/)?(?:watch|embed\/|vi?\/)*(?:\?[\w=&]*vi?=)?([^#&\?\/]{11}).*$"
