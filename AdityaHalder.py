@@ -893,10 +893,7 @@ async def get_call_status(chat_id):
 
 @bot.on_message(cdz(["play", "vplay"]) & ~pyrofl.private)
 async def stream_audio_or_video(client, message):
-   try:
-       await message.reply_photo(
-            photo=START_IMAGE_URL, caption=caption, reply_markup=buttons
-        )
+    try:
         await message.delete()
     except Exception:
         pass
@@ -947,6 +944,13 @@ async def stream_audio_or_video(client, message):
                 "**🥀 Give Me Some Query To\nPlay Audio Or Video❗...\n\nℹ️ Examples:\n≽ Audio: `/play satisfya`\n≽ Video: `/vplay satisfya`**",
                 reply_markup=buttons,
             )
+            try:
+        await message.reply_photo(
+            photo=START_IMAGE_URL,
+        )
+    except Exception as e:
+        LOGGER.info(f"🚫 Error: {e}")
+        return
         
         query = message.text.split(None, 1)[1]
         if "https://" in query:
