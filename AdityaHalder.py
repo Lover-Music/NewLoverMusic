@@ -775,7 +775,6 @@ async def stream_logger(message, streamtype):
                     parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True,
                 )
-        await message.reply_text(usage)
             except:
                 pass
     
