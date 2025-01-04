@@ -778,8 +778,6 @@ async def stream_logger(message, streamtype):
             except:
                 pass
                 
-      @app.on_message(filters.command(["logger"]) & OWNER_ID,)
-@language
 async def logger(client, message, _):
     usage = _["log_1"]
     if len(message.command) != 2:
