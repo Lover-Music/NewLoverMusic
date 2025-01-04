@@ -1021,7 +1021,7 @@ async def stream_audio_or_video(client, message):
                     callback_data="force_close",
                 )
         ],
-        ]
+        
     )
     if stream_type == "Audio":
         stream_media = MediaStream(
