@@ -1145,18 +1145,7 @@ async def stream_audio_or_video(client, message):
 **🐬 Duration:** {duration}
 **🦋 Stream Type:** {stream_type}
 **👾 Requested By:** {requested_by}"""
-                await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
-                await stream_logger(
-                    chat_id, user, title, duration, stream_type, thumbnail
-                )
-            except Exception as e:
-                try:
-                    return await aux.edit(f"**Send Error:** `{e}`")
-                except Exception:
-                    LOGGER.info(f"Send Error: {e}")
-                    return
-
-        buttons = [
+                buttons = [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
@@ -1171,6 +1160,16 @@ async def stream_audio_or_video(client, message):
                 text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
             )
         ],
+                await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
+                await stream_logger(
+                    chat_id, user, title, duration, stream_type, thumbnail
+                )
+            except Exception as e:
+                try:
+                    return await aux.edit(f"**Send Error:** `{e}`")
+                except Exception:
+                    LOGGER.info(f"Send Error: {e}")
+                    return
         else:
             return
         try:
