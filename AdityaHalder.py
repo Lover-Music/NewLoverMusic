@@ -772,21 +772,21 @@ async def stream_logger(
             if position:
                 caption = f"""**✅ Added To Queue At :** `#{position}`
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
+**💥 ᴛɪᴛʟᴇ:** {title}
+**💥 ᴅᴜʀᴀᴛɪᴏɴ:** {duration}
 **🦋 Stream Type:** {stream_type}
 **🌺 Chat Name:** {chat_name}
 **🌼 Chat Link:** {chat_link}
-**👾 Requested By:** {requested_by}"""
+**👾 ✰ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
             else:
                 caption = f"""**✅ Started Streaming On VC.**
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
+**💥 ᴛɪᴛʟᴇ:** {title}
+**💥 ᴅᴜʀᴀᴛɪᴏɴ:** {duration}
 **🦋 Stream Type:** {stream_type}
 **🌺 Chat Name:** {chat_name}
 **🌼 Chat Link:** {chat_link}
-**👾 Requested By:** {requested_by}"""
+**✰ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
             try:
                 await bot.send_photo(LOG_GROUP_ID, photo=thumbnail, caption=caption)
             except Exception:
@@ -842,10 +842,10 @@ async def change_stream(chat_id):
     await add_active_media_chat(chat_id, stream_type)
     caption = f"""**✅ Started Streaming On VC.**
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**👾 Requested By:** {requested_by}"""
+**💥 ᴛɪᴛʟᴇ:** {title}
+**💥 ᴅᴜʀᴀᴛɪᴏɴ:** {duration}
+**🥀 Stream Type:** {stream_type}
+**✰ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -902,20 +902,7 @@ async def stream_audio_or_video(client, message):
     audio = (replied.audio or replied.voice) if replied else None
     video = (replied.video or replied.document) if replied else None
     stickers = [
-        "🌹",
-        "🌺",
-        "🎉",
-        "🎃",
-        "💥",
-        "🦋",
-        "🕊️",
-        "❤️",
-        "💖",
-        "💝",
-        "💗",
-        "💓",
-        "💘",
-        "💞",
+        "🔎",
     ]
     aux = await message.reply_text(random.choice(stickers))
     if audio:
@@ -1047,10 +1034,10 @@ async def stream_audio_or_video(client, message):
                 )
                 caption = f"""**✅ Added To Queue At :** `#{position}`
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**👾 Requested By:** {requested_by}"""
+**💥 ᴛɪᴛʟᴇ:** {title}
+**💥 ᴅᴜʀᴀᴛɪᴏɴ:** {duration}
+**🥀 Stream Type:** {stream_type}
+**✰ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1251,20 +1238,7 @@ async def skip_and_change_stream(client, message):
             return await bot.send_message(chat_id, "**❎ Nothing Streaming❗...**")
         elif call_status == "PLAYING" or call_status == "PAUSED":
             stickers = [
-                "🌹",
-                "🌺",
-                "🎉",
-                "🎃",
-                "💥",
-                "🦋",
-                "🕊️",
-                "❤️",
-                "💖",
-                "💝",
-                "💗",
-                "💓",
-                "💘",
-                "💞",
+                "🔎💥 ᴛɪᴛʟᴇ",
             ]
             aux = await message.reply_text(random.choice(stickers))
             await change_stream(chat_id)
