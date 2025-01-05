@@ -775,6 +775,14 @@ async def stream_logger(message, streamtype):
                     parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True,
                 )
+                caption = f"""**✅ Added To Queue At :** `#{position}`
+
+**🥀 Title:** {title}
+**🐬 Duration:** {duration}
+**🦋 Stream Type:** {stream_type}
+**🌺 Chat Name:** {chat_name}
+**🌼 Chat Link:** {chat_link}
+**👾 Requested By:** {requested_by}"""
             except:
                 pass
                 
