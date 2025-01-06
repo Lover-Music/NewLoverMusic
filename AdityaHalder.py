@@ -80,7 +80,7 @@ if os.path.exists("Config.env"):
 
 API_ID = int(getenv("API_ID", "22926746"))
 API_HASH = getenv("API_HASH", "ffd91926f59e55fb08b3e1a4f5b99b1d")
-BOT_TOKEN = getenv("BOT_TOKEN", "5624068661:AAHoqjlI0VWd7SQ_kmKi8TtY_6Ay-KKSiwY")
+BOT_TOKEN = getenv("BOT_TOKEN", "5624068661:AAG3DHnnrTWaL3X7sBN3bWvFPjYfQWqKORE")
 STRING_SESSION = getenv("STRING_SESSION", "BQFd1ZoABI7htcsZ22dLCbd7BFglPFCyT5JAbF9nxGwkV-DR3hs_sOe1QOGAtGfEaPY0BMitePR1RnW2b2_uzWFGteR15iHtz4gQoFEHKmg99tidegZ_0lQ8u9iW-sePaB-2LQ1eLMo4smN0GYPvx7Y4i03T1xbiQ_UfMbULHbWTl7eXi65l1uY2voYFLL9B64c8aZQein7vVIQqjF3IysjFLLiVzvc4G4Fde0Ja0zT5Q_RTn-X5MUdB0i_YVwFh79ZCWvRNYZBIO1kIgEsVF9qZ4vRABwaZK8eT7NDhApHXUbfWIis3e05pgiw5xd9Huqyp7LsuK1O43N68y9o8dDRmK42iQwAAAAHS5JCGAA")
 MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://hnyx:wywyw2@cluster0.9dxlslv.mongodb.net/?retryWrites=true&w=majority")
 OWNER_ID = int(getenv("OWNER_ID", "7758957839"))
