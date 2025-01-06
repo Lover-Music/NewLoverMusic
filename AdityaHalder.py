@@ -891,7 +891,6 @@ async def get_call_status(chat_id):
 
     return call_status
 
-
 @bot.on_message(cdz(["play", "vplay"]) & ~pyrofl.private)
 async def stream_audio_or_video(client, message):
     try:
@@ -905,7 +904,20 @@ async def stream_audio_or_video(client, message):
     audio = (replied.audio or replied.voice) if replied else None
     video = (replied.video or replied.document) if replied else None
     stickers = [
-        "🔎",
+        "🌹",
+        "🌺",
+        "🎉",
+        "🎃",
+        "💥",
+        "🦋",
+        "🕊️",
+        "❤️",
+        "💖",
+        "💝",
+        "💗",
+        "💓",
+        "💘",
+        "💞",
     ]
     aux = await message.reply_text(random.choice(stickers))
     if audio:
@@ -932,21 +944,18 @@ async def stream_audio_or_video(client, message):
         if len(message.command) < 2:
             buttons = InlineKeyboardMarkup(
                 [
-        [
-            InlineKeyboardButton(
-                text="💫 sᴜᴩᴩᴏʀᴛ 💫", url=f"https://t.me/Lover_Music_Support"),
-        
-            InlineKeyboardButton(
-                text="✯ ᴄʟᴏsᴇ ✯", callback_data="close")
-        ],
+                    [
+                        InlineKeyboardButton(
+                            text="🗑️ Close",
+                            callback_data="force_close",
+                        )
+                    ],
                 ]
             )
             return await aux.edit_text(
                 "**🥀 Give Me Some Query To\nPlay Audio Or Video❗...\n\nℹ️ Examples:\n≽ Audio: `/play satisfya`\n≽ Video: `/vplay satisfya`**",
                 reply_markup=buttons,
             )
-        
-        
         query = message.text.split(None, 1)[1]
         if "https://" in query:
             base = r"(?:https?:)?(?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube(?:\-nocookie)?\.(?:[A-Za-z]{2,4}|[A-Za-z]{2,3}\.[A-Za-z]{2})\/)?(?:shorts\/|live\/)?(?:watch|embed\/|vi?\/)*(?:\?[\w=&]*vi?=)?([^#&\?\/]{11}).*$"
@@ -1007,42 +1016,13 @@ async def stream_audio_or_video(client, message):
         else:
             requested_by = user.title
     buttons = InlineKeyboardMarkup(
-     [
-    [
-            InlineKeyboardButton(
-                text="▷",
-                callback_data=f"ADMIN Resume|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="II", callback_data=f"ADMIN Pause|{chat_id}"
-            ),
-            InlineKeyboardButton(
-                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
-            ),
-            InlineKeyboardButton(
-                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
-            ),
-        ],
-
-         
-     [
-         InlineKeyboardButton(
-                    text="💫 sᴜᴩᴩᴏʀᴛ 💫",
-                    url="https://t.me/LOVER_MUSIC_SUPPORT_GROUP"),
-         InlineKeyboardButton(
-                    text="💥 𝕌ᴘᴅᴀᴛ𝔼 💥",
-                    url="https://t.me/Lover_Music_Support"),
-         
-            
-        
-        ],
         [
-      
+            [
                 InlineKeyboardButton(
                     text="🗑️ Close",
                     callback_data="force_close",
                 )
-        ],
+            ],
         ]
     )
     if stream_type == "Audio":
@@ -1069,10 +1049,10 @@ async def stream_audio_or_video(client, message):
                 )
                 caption = f"""**✅ Added To Queue At :** `#{position}`
 
-**💥 ᴛɪᴛʟᴇ:** {title}
-**💥 ᴅᴜʀᴀᴛɪᴏɴ:** {duration}
-**🥀 Stream Type:** {stream_type}
-**✰ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
+**🥀 Title:** {title}
+**🐬 Duration:** {duration}
+**🦋 Stream Type:** {stream_type}
+**👾 Requested By:** {requested_by}"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1180,7 +1160,6 @@ async def stream_audio_or_video(client, message):
 **🐬 Duration:** {duration}
 **🦋 Stream Type:** {stream_type}
 **👾 Requested By:** {requested_by}"""
-                
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail
@@ -1205,60 +1184,8 @@ async def stream_audio_or_video(client, message):
         except Exception:
             LOGGER.info(f"🚫 Stream Error: {e}")
             return
-
-
-@bot.on_message(cdx(["pause", "vpause"]) & ~pyrofl.private)
-async def pause_running_stream_on_vc(client, message):
-    chat_id = message.chat.id
-    try:
-        await message.delete()
-    except Exception:
-        pass
-    try:
-        call_status = await get_call_status(chat_id)
-        if call_status == "IDLE" or call_status == "NOTHING":
-            return await message.reply_text("**❎ Nothing Streaming❗**")
-
-        elif call_status == "PAUSED":
-            return await message.reply_text("**🔈 Already Paused❗**")
-        elif call_status == "PLAYING":
-            await call.pause_stream(chat_id)
-            return await message.reply_text("**🔈 Stream Paused❗**")
-        else:
-            return
-    except Exception as e:
-        try:
-            await bot.send_message(chat_id, f"**🚫 Stream Pause Error:** `{e}`")
-        except Exception:
-            LOGGER.info(f"🚫 Stream Pause Error: {e}")
-            return
-
-
-@bot.on_message(cdx(["resume", "vresume"]) & ~pyrofl.private)
-async def resume_paused_stream_on_vc(client, message):
-    chat_id = message.chat.id
-    try:
-        await message.delete()
-    except Exception:
-        pass
-    try:
-        call_status = await get_call_status(chat_id)
-        if call_status == "IDLE" or call_status == "NOTHING":
-            return await message.reply_text("**❎ Nothing Streaming❗**")
-
-        elif call_status == "PLAYING":
-            return await message.reply_text("**🔊 Already Streaming❗**")
-        elif call_status == "PAUSED":
-            await call.resume_stream(chat_id)
-            return await message.reply_text("**🔊 Stream Resumed❗**")
-        else:
-            return
-    except Exception as e:
-        try:
-            await bot.send_message(chat_id, f"**🚫 Stream Resume Error:** `{e}`")
-        except Exception:
-            LOGGER.info(f"🚫 Stream Resume Error: {e}")
-            return
+                                        await app.join_chat(invitelink)
+                        
 
 
 @bot.on_message(cdx(["skip", "vskip"]) & ~pyrofl.private)
