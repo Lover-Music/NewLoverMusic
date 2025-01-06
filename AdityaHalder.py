@@ -1184,7 +1184,7 @@ async def stream_audio_or_video(client, message):
         except Exception:
             LOGGER.info(f"🚫 Stream Error: {e}")
             return
-                                        await app.join_chat(invitelink)
+                                        
                         
 
 
