@@ -1506,9 +1506,3 @@ async def broadcast_message(client, message):
         except:
             pass
 
-
-
-
-
-if __name__ == "LoverMusic":
-    loop.run_until_complete(main())
