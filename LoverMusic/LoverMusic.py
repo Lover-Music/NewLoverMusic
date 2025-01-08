@@ -98,7 +98,6 @@ def rgx(pattern: Union[str, Pattern]):
     return pyrofl.regex(pattern)
 
 
-bot_owner_only = pyrofl.user(OWNER_ID)
 
 
 # all clients
