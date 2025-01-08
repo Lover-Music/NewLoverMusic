@@ -1,6 +1,9 @@
-# config variables
-if os.path.exists("Config.env"):
-    load_dotenv("Config.env")
+from os import getenv
+
+from dotenv import load_dotenv
+from pyrogram import filters
+
+
 
 API_ID = int(getenv("API_ID", "22926746"))
 API_HASH = getenv("API_HASH", "ffd91926f59e55fb08b3e1a4f5b99b1d")
