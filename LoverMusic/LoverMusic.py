@@ -1510,5 +1510,5 @@ async def broadcast_message(client, message):
 
 
 
-if __name__ == "__main__":
+if __name__ == "LoverMusic":
     loop.run_until_complete(main())
