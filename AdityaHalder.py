@@ -87,7 +87,7 @@ OWNER_ID = int(getenv("OWNER_ID", "7758957839"))
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002488687891"))
 START_IMAGE_URL = getenv("START_IMAGE_URL", "https://telegra.ph/file/a62273c43c95ad07ada61.jpg")
 STATS_IMAGE_URL = getenv("STATS_IMAGE_URL", "https://graph.org//file/99a8a9c13bb01f9ac7d98.png")
-
+AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 
 # Memory Database
 
